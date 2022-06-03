@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.loading-section {
+  width: 50%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Spring', handwriting;
+  text-align: center;
+  font-size: 60px;
+}
+
+div{
+  font-family: 'Typewriter Regular';
+  text-align: center;
+}
+
+@media screen and (max-width:426px) and (orientation:portrait) {
+  h1 {
+      font-size: 32px;
+  }
+}
+

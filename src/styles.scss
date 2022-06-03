@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* COULEURS */
+$marron : #33271F;
+$beige : #D7CFC3;
+$sauge : #b5c99a;
+$moutarde : #ddae2c;
+
+/* POLICES */
+@font-face {
+  font-family: "Spring";
+  src: url("assets/fonts/Spring\ in\ May.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Typewriter Regular";
+  src: url("assets/fonts/ELEGANT\ TYPEWRITER\ Regular.ttf") format("woff2");
+}
+
+/* PARAMETRES GENERAUX */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #D7CFC3;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
