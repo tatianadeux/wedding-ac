@@ -23,7 +23,7 @@ $moutarde : #ddae2c;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #D7CFC3;
+  color: $marron;
 }
 
 .flex {
@@ -32,4 +32,13 @@ $moutarde : #ddae2c;
   align-items: center;
   flex-direction: column;
 }
+
+body {
+  background-image: url('assets/img//mobile/fond-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
 
