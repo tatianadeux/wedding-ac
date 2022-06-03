@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { LoadingComponent } from './loading/loading.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ProgrammeComponent } from './programme/programme.component';
+import { FormComponent } from './form/form.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingComponent,
     AccueilComponent,
-    ProgrammeComponent
+    ProgrammeComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

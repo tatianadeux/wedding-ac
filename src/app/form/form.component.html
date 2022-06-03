@@ -1,0 +1,22 @@
+<section>
+  <h3>Notre Réponse</h3>
+  <form [formGroup]="reponseForm" id="formulaire" class="">
+    <input type="text" id="nom" formControlName="nom" placeholder="Mon nom" class="form-input">
+    <input type="text" id="contact" formControlName="contact" placeholder="Moyen de contact" class="form-input">
+
+    <select name="" id="presence" formControlName="presences" class="form-input">
+      <option [ngValue]="null" disabled>Présence</option>
+      <option *ngFor="let presence of presences" [ngValue]="presence.id">{{presence.name}}</option>
+    </select>
+
+    <div class="form-div">
+      <span class="">Nous serons présents pour</span>
+      <div *ngFor="let choice of choices" id="form-choice">
+        <input type="checkbox">
+        <label class="form-label" for="choix">{{choice.name}}</label>
+      </div>
+    </div>
+
+    <button type="submit" (click)="onSubmitForm()" id="form-button">Nous confirmons</button>
+  </form>
+</section>
