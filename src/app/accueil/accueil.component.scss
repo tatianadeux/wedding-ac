@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 
-.titre-accueil {
+#titre-accueil {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -21,12 +21,12 @@ h2 {
   font-size: 1.2em;
 }
 
-.texte-accueil {
+#texte-accueil {
   width: 80%;
-  margin: 100px auto;
+  margin: 90px auto 0 auto;
 }
 
-.texte-accueil p {
+#texte-accueil p {
   font-family: 'Typewriter Regular';
   font-size: 1.1em;
   margin: 12px 0;
@@ -34,7 +34,7 @@ h2 {
 }
 
 .img-accueil {
-  width: 75%;
+  width: 70%;
   margin: 0 auto;
 }
 
