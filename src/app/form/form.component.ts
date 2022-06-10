@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { DatabaseService } from '../database.service';
+
 
 @Component({
   selector: 'app-form',
@@ -23,11 +25,11 @@ export class FormComponent implements OnInit {
     {id: 2, name : 'Le Goûter et le Repas dansant'}
   ]
 
-  constructor (formBuilder:FormBuilder) { }
+  constructor (formBuilder:FormBuilder, private database: DatabaseService) { } /* j'ai injecté mon service dans mon component */
 
   ngOnInit(): void {
     this.reponseForm = new FormGroup({
-      nom : new FormControl(),
+      name : new FormControl(),
       contact : new FormControl(),
       presences : new FormControl(),
       choices : new FormControl()
@@ -35,7 +37,9 @@ export class FormComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    console.log(this.reponseForm.value)
+    console.log(this.reponseForm.value);
+    this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
   }
 
 }
+
