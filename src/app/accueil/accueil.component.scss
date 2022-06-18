@@ -5,20 +5,22 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 88vh;
-  width: 80%;
-  margin: 0 auto;
+  height: 90vh;
+  width: 95%;
+  margin: 0 auto 17% auto;
 }
 
 
-h1 {
+#titre-accueil>h1 {
   font-family: 'Spring';
-  font-size: 2.5em;
+  font-size: 52px;
+  margin: 8px 0;
 }
 
-h2 {
+#titre-accueil h2 {
   font-family: 'Typewriter Regular';
-  font-size: 1.2em;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 #texte-accueil {
@@ -38,3 +40,18 @@ h2 {
   margin: 0 auto;
 }
 
+@media screen and (max-width:360px) {
+  #titre-accueil {
+    height: 86vh;
+    margin: 0 auto 44% auto;
+  }
+
+  #titre-accueil>h1 {
+    font-size: 46px;
+  }
+
+  #titre-accueil>h2 {
+    font-size: 22px;
+  }
+
+}
