@@ -1,0 +1,57 @@
+@import '../../styles.scss';
+
+#formulaire {
+  width: 80%;
+  margin: 0 auto;
+  height: 60vh;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px $marron solid;
+  border-radius: 20px;
+  background-color: $beigeLight;
+  font-family: 'Typewriter Regular';
+  padding-left: 10px;
+  margin: 10px 0;
+}
+
+.form-input::placeholder {
+  color: $marron;
+  font-size: 14px;
+}
+
+.form-div, #form-button {
+  width: 100%;
+  border: 1px $marron solid;
+  border-radius: 20px;
+  background-color: $beigeLight;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form-div > span, #form-button {
+  display: block;
+  color: $marron;
+  font-size: 14px;
+  font-family: 'Typewriter Regular';
+  margin: 4px 0;
+}
+
+#form-choice {
+  display: flex;
+  align-items: center;
+}
+
+.form-label {
+  margin: 3px;
+  font-family: 'Typewriter Regular';
+  color: $marron;
+  font-size: 14px;
+}
+
+#form-button {
+  width: 60%;
+  margin: 0 auto;
+}

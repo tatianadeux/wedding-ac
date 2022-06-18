@@ -1,2 +1,29 @@
 @import '../../styles.scss';
 
+#programme {
+  text-align: center;
+  margin: 28px 0;
+}
+
+.titre-prg {
+  font-family: 'Spring';
+  font-size: 1.8em;
+}
+
+.texte-prg {
+  font-family: 'Typewriter Regular';
+  font-size: 1.1em;
+}
+
+.lieu-prg {
+  margin: 10px 0;
+}
+
+.carte-prg {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.carte-prg>a>img {
+  border-radius: 10%;
+}

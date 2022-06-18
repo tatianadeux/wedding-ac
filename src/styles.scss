@@ -3,6 +3,7 @@
 /* COULEURS */
 $marron : #33271F;
 $beige : #D7CFC3;
+$beigeLight : #EDEBE5;
 $sauge : #b5c99a;
 $moutarde : #ddae2c;
 
@@ -33,12 +34,21 @@ $moutarde : #ddae2c;
   flex-direction: column;
 }
 
+h3 {
+  font-family: 'Spring';
+  font-size: 2.4em;
+  text-align: center;
+  line-height: 1.8em;
+}
+
+
 .w100 {
   width: 100%;
 }
-
+/*
 body {
   background-image: url('assets/img//mobile/fond-mobile.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
+*/
