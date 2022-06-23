@@ -9,6 +9,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ProgrammeComponent } from './programme/programme.component';
 import { FormComponent } from './form/form.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -18,7 +19,8 @@ import { FormComponent } from './form/form.component';
     LoadingComponent,
     AccueilComponent,
     ProgrammeComponent,
-    FormComponent
+    FormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

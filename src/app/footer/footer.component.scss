@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+#section-footer {
+  background-color: $marron;
+  padding: 40px;
+  text-align: center;
+}
+
+#section-footer h3 {
+  font-family: $Spring;
+  color: $beige;
+  font-size: 1.8em;
+  margin: 12px 0;
+}
+
+.nom-footer {
+  font-family: $Spring;
+  color: $beige;
+  font-size: 1.5em;
+  margin: 8px 0;
+}
+
+#img-footer {
+  width: 45%;
+  margin: 0 auto;
+  display: block;
+}
+
+.infos-footer {
+  color: $beige;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
