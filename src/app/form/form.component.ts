@@ -22,7 +22,8 @@ export class FormComponent implements OnInit {
   choices = [
     {id: 0, name : 'La Mairie'},
     {id: 1, name : 'Le Discours Biblique'},
-    {id: 2, name : 'Le Goûter et le Repas dansant'}
+    {id: 2, name : 'Le Goûter'},
+    {id: 3, name : 'Le Repas dansant'}
   ]
 
   constructor (formBuilder:FormBuilder, private database: DatabaseService) { } /* j'ai injecté mon service dans mon component */

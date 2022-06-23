@@ -5,33 +5,48 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 86vh;
+  height: 98vh;
   width: 95%;
   margin: 0 auto 17% auto;
 }
 
 
 #titre-accueil>h1 {
-  font-family: 'Spring';
+  font-family: $Spring;
   font-size: 52px;
   margin: 8px 0;
 }
 
 #titre-accueil h2 {
-  font-family: 'Typewriter Regular';
   font-size: 24px;
   margin-bottom: 8px;
+}
+
+#div-infos {
+  margin-top: 10%;
+}
+
+#plus-accueil {
+  text-decoration:none;
+  width: 11%;
+  margin: 0 auto;
+  display: block;
+  animation: scale 3s infinite;
+}
+
+#texte-infos {
+  text-align: center;
 }
 
 #texte-accueil {
   width: 80%;
   margin: 90px auto 0 auto;
+  padding-top: 7px;
 }
 
 #texte-accueil p {
-  font-family: 'Typewriter Regular';
   font-size: 1.1em;
-  margin: 12px 0;
+  margin-top: 12px;
   line-height: 33px;
 }
 
@@ -53,4 +68,17 @@
     font-size: 22px;
   }
 
+}
+
+@keyframes scale {
+  0% {
+
+      transform: translateY(-10%) scale(1);
+  }
+  50% {
+      transform: translateY(10%) scale(1.1);
+  }
+  100% {
+      transform: translateY(-10%) scale(1);
+  }
 }

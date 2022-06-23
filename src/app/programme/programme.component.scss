@@ -6,12 +6,11 @@
 }
 
 .titre-prg {
-  font-family: 'Spring';
+  font-family: $Spring;
   font-size: 1.8em;
 }
 
 .texte-prg {
-  font-family: 'Typewriter Regular';
   font-size: 1.1em;
 }
 
@@ -27,3 +26,4 @@
 .carte-prg>a>img {
   border-radius: 10%;
 }
+
