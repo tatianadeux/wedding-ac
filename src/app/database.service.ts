@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -7,10 +8,10 @@ import { Injectable } from '@angular/core';
 })
 export class DatabaseService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  sendData(answers:any) {
-    this.http.post<any>('URL',answers);
+  sendData(answers:FormGroup) {
+    this.http.post<any>('http://api.amandine-cedric.fr/',answers);
     console.log(answers);
   }
 }

@@ -50,5 +50,13 @@
 
 #form-button {
   width: 60%;
-  margin: 0 auto;
+  margin: 10px auto;
+  background-color: $marron;
+  color: $moutarde;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #d72424;
+  padding-left: 11px;
 }
