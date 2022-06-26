@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  frontend:
+    # build: .
+    image: wedding-ac
+    ports:
+      - 8081:80
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.front.rule=Host(`amandine-cedric.fr`)"
+      - "traefik.http.routers.front-s.rule=Host(`amandine-cedric.fr`)"
+      - "traefik.http.routers.front-s.entrypoints=websecure"
+      - "traefik.http.routers.front-s.tls.certresolver=myresolver"
+  
+  backend:
+    image: backend # docker build -t backend && docker-compose up -d
+    networks:
+      - proxy
+    volumes:
+      - $PWD/target
+    ports:
+      - 8080:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.back.rule=Host(`api.amandine-cedric.fr`)"
+      - "traefik.http.routers.back-s.rule=Host(`api.amandine-cedric.fr`)"
+      - "traefik.http.routers.back-s.entrypoints=websecure"
+      - "traefik.http.routers.back-s.tls.certresolver=myresolver"
+      - "traefik.http.services.back.loadbalancer.server.port=8080"
+
+networks:
+  proxy:
+    external: true
