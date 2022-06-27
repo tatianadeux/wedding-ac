@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+/* COULEURS */
+/* POLICES */
+@font-face {
+  font-family: "Spring";
+  src: url("assets/fonts/Spring in May.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Regular";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
+}
+/* PARAMETRES GENERAUX */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #33271F;
+  scroll-behavior: smooth;
+  font-family: "Typewriter Regular";
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: "Spring";
+  font-size: 2.4em;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.w100 {
+  width: 100%;
+}
+
+body {
+  background-image: url("assets/img/mobile/fond30.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#programme {
+  text-align: center;
+  margin: 28px 0;
+}
+
+.titre-prg {
+  font-family: "Spring";
+  font-size: 1.8em;
+}
+
+.texte-prg {
+  font-size: 1.1em;
+}
+
+.lieu-prg {
+  margin: 10px 0;
+}
+
+#carte-prg {
+  width: 70%;
+  margin: 20px auto;
+}
+
+#carte-prg > a > img {
+  border-radius: 10%;
+}

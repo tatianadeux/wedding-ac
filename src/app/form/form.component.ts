@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { DatabaseService } from '../database.service';
 import { ValidationErrors } from '@angular/forms';
 
@@ -44,10 +44,31 @@ export class FormComponent implements OnInit {
           Validators.minLength(1)
         ])),
       presences: new FormControl(Validators.required),
-      choices: new FormControl(""),
-      numberOfPeople: new FormControl(""),
-      music: new FormControl("")
+      choices: new FormArray([]),
+      nombreDePersonnes: new FormControl(""),
+      musique: new FormControl("")
     })
+  }
+
+  onCheckboxChange(event: any){
+    let selectedChoices = (this.reponseForm.controls['choices'] as FormArray);
+    let valueSelected = (event.target.checked)
+    let valueName = (event.target.value)
+    console.log(valueSelected);
+
+    if (valueSelected){
+      selectedChoices.push(new FormControl(valueName));
+    } else {
+      let i: number = 0;
+      selectedChoices.controls.forEach((ctrl: AbstractControl) => {
+        if (ctrl.value == valueName) {
+          selectedChoices.removeAt(i)
+        }
+        i++
+      })
+      console.log(selectedChoices);
+
+    }
   }
 
   onSubmitForm(): void {

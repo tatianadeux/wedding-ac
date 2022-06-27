@@ -2,12 +2,12 @@
   <h3>Notre Réponse</h3>
   <form [formGroup]="reponseForm" id="formulaire" class="">
 
-    <div *ngIf="reponseForm.controls['name'].errors" class="error-msg">
+    <div *ngIf="reponseForm.controls['name'].errors && reponseForm.dirty" class="error-msg">
       <p [hidden]="!reponseForm.controls['name'].errors['required']" class="error-text">Le nom et le prénom manquent</p>
     </div>
     <input type="text" id="nom" formControlName="name" placeholder="Mon nom et mon prénom" class="form-input">
 
-    <div *ngIf="reponseForm.controls['email'].errors" class="error-msg">
+    <div *ngIf="reponseForm.controls['email'].errors && reponseForm.dirty" class="error-msg">
       <p [hidden]="!reponseForm.controls['email'].errors['required']" class="error-text">L'email manque</p>
       <p [hidden]="!reponseForm.controls['email'].errors['email']" class="error-text">L'email n'est pas valide</p>
     </div>
@@ -26,13 +26,13 @@
     <div class="form-div">
       <span class="">Nous serons présents pour</span>
       <div *ngFor="let choice of choices; let i = index" id="form-choice">
-        <input [id]="'choix' + i" type="checkbox">
+        <input [id]="'choix' + i" type="checkbox" [value]="choice.name" (change)="onCheckboxChange($event)">
         <label class="form-label" [for]="'choix' + i">{{choice.name}}</label>
       </div>
     </div>
 
-    <input type="number" id="number" formControlName="numberOfPeople" placeholder="Nombre de personnes" class="form-input">
-    <input type="text" id="music" formControlName="music" placeholder="Une musique qu'on aimerait entendre" class="form-input">
+    <input type="number" id="number" formControlName="nombreDePersonnes" placeholder="Nombre de personnes" class="form-input">
+    <input type="text" id="music" formControlName="musique" placeholder="Une musique qu'on aimerait entendre" class="form-input">
 
     <button type="submit" (click)="onSubmitForm()" [disabled]="!reponseForm.valid" id="form-button">Notre réponse</button>
   </form>
