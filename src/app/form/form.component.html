@@ -11,7 +11,7 @@
       <p [hidden]="!reponseForm.controls['email'].errors['required']" class="error-text">L'email manque</p>
       <p [hidden]="!reponseForm.controls['email'].errors['email']" class="error-text">L'email n'est pas valide</p>
     </div>
-    <input type="text" id="email" formControlName="email" placeholder="Mon adresse email" class="form-input">
+    <input type="text" id="email" [(ngModel)] = "reponseInvitation.email" formControlName="email" placeholder="Mon adresse email" class="form-input">
 
     <div *ngIf="reponseForm.controls['presences'].errors" class="error-msg">
       <p [hidden]="!reponseForm.controls['presences'].errors['required']" class="error-text">La présence n'est pas sélectionnée</p>
