@@ -13,6 +13,7 @@ var FormComponent = /** @class */ (function () {
     function FormComponent(formBuilder, database) {
         this.database = database;
         this.name = "";
+        this.email = "";
         this.presences = [
             { id: 0, name: 'Nous serons avec vous' },
             { id: 1, name: 'Nous ne pourrons pas être là' }
@@ -42,25 +43,27 @@ var FormComponent = /** @class */ (function () {
             musique: new forms_1.FormControl("")
         });
     };
-    FormComponent.prototype.onCheckboxChange = function (event) {
-        var selectedChoices = this.reponseForm.controls['choices'];
-        var valueSelected = (event.target.checked);
-        var valueName = (event.target.value);
+    /*
+      onCheckboxChange(event: any){
+        let selectedChoices = (this.reponseForm.controls['choices'] as FormArray);
+        let valueSelected = (event.target.checked)
+        let valueName = (event.target.value)
         console.log(valueSelected);
-        if (valueSelected) {
-            selectedChoices.push(new forms_1.FormControl(valueName));
+    
+        if (valueSelected){
+          selectedChoices.push(new FormControl(valueName));
+        } else {
+          let i: number = 0;
+          selectedChoices.controls.forEach((ctrl: AbstractControl) => {
+            if (ctrl.value == valueName) {
+              selectedChoices.removeAt(i)
+            }
+            i++
+          })
+          console.log(selectedChoices);
+    
         }
-        else {
-            var i_1 = 0;
-            selectedChoices.controls.forEach(function (ctrl) {
-                if (ctrl.value == valueName) {
-                    selectedChoices.removeAt(i_1);
-                }
-                i_1++;
-            });
-            console.log(selectedChoices);
-        }
-    };
+      }*/
     FormComponent.prototype.onSubmitForm = function () {
         console.log(this.reponseForm.value);
         this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
@@ -75,3 +78,4 @@ var FormComponent = /** @class */ (function () {
     return FormComponent;
 }());
 exports.FormComponent = FormComponent;
+/* voir pour faire un this.Form.value pour récupérer toutes les valeurs du formulaire pour l'envoyer au back*/

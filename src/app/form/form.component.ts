@@ -15,6 +15,8 @@ export class FormComponent implements OnInit {
 
   name: string = "";
 
+  email: string= "";
+
   presences = [
     {id: 0, name : 'Nous serons avec vous'},
     {id: 1, name : 'Nous ne pourrons pas être là'}
@@ -26,6 +28,7 @@ export class FormComponent implements OnInit {
     {id: 2, name : 'Le Goûter'},
     {id: 3, name : 'Le Repas dansant'}
   ]
+
 
   constructor (formBuilder:FormBuilder, private database: DatabaseService){} /* j'ai injecté mon service dans mon component */
 
@@ -50,6 +53,7 @@ export class FormComponent implements OnInit {
     })
   }
 
+/*
   onCheckboxChange(event: any){
     let selectedChoices = (this.reponseForm.controls['choices'] as FormArray);
     let valueSelected = (event.target.checked)
@@ -69,7 +73,7 @@ export class FormComponent implements OnInit {
       console.log(selectedChoices);
 
     }
-  }
+  }*/
 
   onSubmitForm(): void {
     console.log(this.reponseForm.value);
@@ -77,4 +81,4 @@ export class FormComponent implements OnInit {
   }
 
 }
-
+/* voir pour faire un this.Form.value pour récupérer toutes les valeurs du formulaire pour l'envoyer au back*/
