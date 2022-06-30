@@ -16,7 +16,7 @@
   border: 1px $marron solid;
   border-radius: 20px;
   background-color: $beigeLight;
-  padding-left: 10px;
+  padding-left: 14px;
   margin: 10px 0;
 }
 
@@ -30,7 +30,7 @@
   border: 1px $marron solid;
   border-radius: 20px;
   background-color: $beigeLight;
-  padding: 10px;
+  padding: 9px 14px;
   margin: 10px 0;
 }
 
@@ -41,9 +41,10 @@
   margin: 4px 0;
 }
 
-#form-choice {
+.form-center {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .form-label {
@@ -54,13 +55,46 @@
 
 #form-button {
   width: 60%;
-  margin: 10px auto;
+  margin: 10% auto;
   background-color: $marron;
   color: $moutarde;
+  padding: 10px;
 }
 
 .error-text {
   font-size: 14px;
   color: #d72424;
   padding-left: 11px;
+}
+
+.form-number {
+  height: 30px;
+  border: $marron;
+  background-color: $beigeLight;
+  margin: 10px;
+  padding: 4px;
+  text-align: center;
+}
+
+#form-confirm {
+  text-align: center;
+  margin: 20% auto;
+  width: 90%;
+  border: $moutarde 2px solid;
+  background-color: $moutarde;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+#form-confirm img {
+  width: 11%;
+  margin: 4px;
+}
+
+#form-confirm p {
+  font-size: 16px;
+}
+
+.form-group {
+  margin: 6px 0 ;
 }
