@@ -10,64 +10,64 @@ exports.FormComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var FormComponent = /** @class */ (function () {
-    function FormComponent(formBuilder, database) {
-        this.database = database;
-        this.name = "";
-        this.email = "";
-        this.presences = [
-            { id: 0, name: 'Nous serons avec vous' },
-            { id: 1, name: 'Nous ne pourrons pas être là' }
-        ];
-        this.choices = [
-            { id: 0, name: 'La Mairie' },
-            { id: 1, name: 'Le Discours Biblique' },
-            { id: 2, name: 'Le Goûter' },
-            { id: 3, name: 'Le Repas dansant' }
-        ];
-    } /* j'ai injecté mon service dans mon component */
-    FormComponent.prototype.ngOnInit = function () {
-        this.reponseForm = new forms_1.FormGroup({
-            name: new forms_1.FormControl("", forms_1.Validators.compose([
-                forms_1.Validators.required,
-                forms_1.Validators.minLength(1),
-                forms_1.Validators.maxLength(100)
-            ])),
+    function FormComponent(formBuilder) {
+        this.formBuilder = formBuilder;
+        this.selectedCheckbox = [];
+        this.isSubmitted = false;
+        this.isValid = true;
+        this.reponseForm = this.formBuilder.group({
+            name: new forms_1.FormControl("", forms_1.Validators.required),
             email: new forms_1.FormControl("", forms_1.Validators.compose([
                 forms_1.Validators.required,
-                forms_1.Validators.email,
-                forms_1.Validators.minLength(1)
+                forms_1.Validators.email
             ])),
-            presences: new forms_1.FormControl(forms_1.Validators.required),
-            choices: new forms_1.FormArray([]),
-            nombreDePersonnes: new forms_1.FormControl(""),
+            presence: this.formBuilder.group({
+                presenceMairie: new forms_1.FormControl(false),
+                presenceDiscours: new forms_1.FormControl(false),
+                presenceGouter: new forms_1.FormControl(false),
+                presenceSoiree: new forms_1.FormControl(false)
+            }),
+            nombreAdultes: new forms_1.FormControl(0),
+            nombreEnfants: new forms_1.FormControl(0),
             musique: new forms_1.FormControl("")
         });
-    };
-    /*
-      onCheckboxChange(event: any){
-        let selectedChoices = (this.reponseForm.controls['choices'] as FormArray);
-        let valueSelected = (event.target.checked)
-        let valueName = (event.target.value)
-        console.log(valueSelected);
-    
-        if (valueSelected){
-          selectedChoices.push(new FormControl(valueName));
-        } else {
-          let i: number = 0;
-          selectedChoices.controls.forEach((ctrl: AbstractControl) => {
-            if (ctrl.value == valueName) {
-              selectedChoices.removeAt(i)
-            }
-            i++
-          })
-          console.log(selectedChoices);
-    
+    }
+    FormComponent.prototype.controleOnChange = function (event) {
+        var inputHtml = event.target;
+        if (inputHtml.checked) {
+            this.selectedCheckbox.push(inputHtml.value);
+            console.log(this.selectedCheckbox);
         }
-      }*/
-    FormComponent.prototype.onSubmitForm = function () {
-        console.log(this.reponseForm.value);
-        this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+        else {
+            var index = this.selectedCheckbox.findIndex(function (choice) { return choice === inputHtml.value; });
+            this.selectedCheckbox.splice(index, 1);
+            console.log(this.selectedCheckbox);
+        }
     };
+    FormComponent.prototype.onSubmit = function () {
+        if (this.reponseForm.valid) {
+            console.log(this.reponseForm.value);
+            this.isSubmitted = true;
+            /* this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+        }
+        if (this.reponseForm.invalid) {
+            this.isValid = false;
+        }
+    };
+    Object.defineProperty(FormComponent.prototype, "name", {
+        get: function () {
+            return this.reponseForm.controls['name'];
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(FormComponent.prototype, "email", {
+        get: function () {
+            return this.reponseForm.controls['email'];
+        },
+        enumerable: false,
+        configurable: true
+    });
     FormComponent = __decorate([
         core_1.Component({
             selector: 'app-form',
@@ -78,4 +78,3 @@ var FormComponent = /** @class */ (function () {
     return FormComponent;
 }());
 exports.FormComponent = FormComponent;
-/* voir pour faire un this.Form.value pour récupérer toutes les valeurs du formulaire pour l'envoyer au back*/

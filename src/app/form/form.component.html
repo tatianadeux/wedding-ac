@@ -1,39 +1,63 @@
 <section id="form-section">
-  <h3>Notre Réponse</h3>
-  <form [formGroup]="reponseForm" id="formulaire" class="">
-
-    <div *ngIf="reponseForm.controls['name'].errors && reponseForm.dirty" class="error-msg">
-      <p [hidden]="!reponseForm.controls['name'].errors['required']" class="error-text">Le nom et le prénom manquent</p>
+  <form [formGroup]="reponseForm" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngIf="name.errors && !isValid">
+      <span *ngIf="name.errors['required']">Le nom manque</span>
     </div>
-    <input type="text" id="nom" formControlName="name" placeholder="Mon nom et mon prénom" class="form-input" [(ngModel)]="name">
-
-    <div *ngIf="reponseForm.controls['email'].errors && reponseForm.dirty" class="error-msg">
-      <p [hidden]="!reponseForm.controls['email'].errors['required']" class="error-text">L'email manque</p>
-      <p [hidden]="!reponseForm.controls['email'].errors['email']" class="error-text">L'email n'est pas valide</p>
+    <div>
+      <label for="name">Nom & Prénom</label>
+      <input type="text" id="name" formControlName="name">
     </div>
-    <input type="text" id="email" formControlName="email" placeholder="Mon adresse email" class="form-input" [(ngModel)]="email">
 
-    <div *ngIf="reponseForm.controls['presences'].errors" class="error-msg">
-      <p [hidden]="!reponseForm.controls['presences'].errors['required']" class="error-text">La présence n'est pas sélectionnée</p>
+    <div *ngIf="email.errors && !isValid">
+      <span *ngIf="email.errors['required']">L'email est manquant</span>
+      <span *ngIf="email.errors['email']">L'email n'est pas conforme</span>
     </div>
-    <select name="" id="presence" formControlName="presences" class="form-input">
-      <option [ngValue]="null" disabled>Présence</option>
-      <option *ngFor="let presence of presences" [ngValue]="presence.id">{{presence.name}}</option>
-    </select>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email">
+    </div>
 
-
-    <div class="form-div">
-      <span class="">Nous serons présents pour</span>
-
-      <div *ngFor="let choice of choices; let i = index" id="form-choice">
-        <input [id]="'choix' + i" type="checkbox" [value]="choice.name">
-        <label class="form-label" [for]="'choix' + i">{{choice.name}}</label>
+    <div formGroupName="presence">
+      <div>
+        <input value="presenceMairie" type="checkbox" id="presenceMairie" (change)="controleOnChange($event)" formControlName="presenceMairie">
+        <label for="presenceMairie">Mairie</label>
+      </div>
+      <div>
+        <input value="presenceDiscours" type="checkbox" id="presenceDiscours" (change)="controleOnChange($event)" formControlName="presenceDiscours">
+        <label for="presenceDiscours">Discours Biblique</label>
+      </div>
+      <div>
+        <input value="presenceGouter" type="checkbox" id="presenceGouter" (change)="controleOnChange($event)" formControlName="presenceGouter">
+        <label for="presenceGouter">Goûter</label>
+      </div>
+      <div>
+        <input value="presenceSoiree" type="checkbox" id="presenceSoiree" (change)="controleOnChange($event)" formControlName="presenceSoiree">
+        <label for="presenceSoiree">Soirée</label>
       </div>
     </div>
 
-    <input type="number" id="number" formControlName="nombreDePersonnes" placeholder="Nombre de personnes" class="form-input">
-    <input type="text" id="music" formControlName="musique" placeholder="Une musique qu'on aimerait entendre" class="form-input">
+    <div>
+      <label for="nombreAdultes">Nombre d'Adultes</label>
+      <input type="number" id="nombreAdultes" min="0" max="10" formControlName="nombreAdultes">
+    </div>
 
-    <button type="submit" (click)="onSubmitForm()" [disabled]="!reponseForm.valid" id="form-button">Notre réponse</button>
+    <div>
+      <label for="nombreEnfants">Nombre d'Enfants</label>
+      <input type="number" id="nombreEnfants" min="0" max="10" formControlName="nombreEnfants">
+    </div>
+
+    <div>
+      <label for="musique">Musique qu'on aimerait entendre</label>
+      <input type="text" id="musique" formControlName="musique">
+    </div>
+
+
+    <input type="submit" value="Nous confirmons">
+    <!-- Récupérer les données, instancier un nouvel objet / quand j'envoie avec le client http, utiliser la methode tojson pour qu'il le reçoive comme il veut-->
   </form>
+
+  <div *ngIf="reponseForm.valid && isSubmitted">
+    <p>Votre réponse a bien été envoyée </p>
+  </div>
+
 </section>

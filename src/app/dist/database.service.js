@@ -16,7 +16,7 @@ var DatabaseService = /** @class */ (function () {
     DatabaseService.prototype.sendData = function (answers) {
         var headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
         var answer = JSON.stringify(answers);
-        this.http.post('http://api.amandine-cedric.fr/presence', answer); /* URL / body / header */
+        this.http.post('http://api.amandine-cedric.fr/presence', answer, { headers: headers }); /* URL / body / header */
         console.log(answers);
     };
     DatabaseService = __decorate([

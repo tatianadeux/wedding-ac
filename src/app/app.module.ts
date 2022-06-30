@@ -8,9 +8,8 @@ import { AppComponent } from './app.component';
 import { LoadingComponent } from './loading/loading.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ProgrammeComponent } from './programme/programme.component';
-import { FormComponent } from './form/form.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -19,8 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     LoadingComponent,
     AccueilComponent,
     ProgrammeComponent,
-    FormComponent,
-    FooterComponent
+    FooterComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

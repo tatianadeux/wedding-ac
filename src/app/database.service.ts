@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
@@ -14,7 +14,7 @@ export class DatabaseService {
     const headers = new HttpHeaders().set('Content-Type','application/json');
 
     const answer = JSON.stringify(answers)
-    this.http.post<any>('http://api.amandine-cedric.fr/presence', answer);  /* URL / body / header */
+    this.http.post<any>('http://api.amandine-cedric.fr/presence', answer, {headers:headers});  /* URL / body / header */
     console.log(answers);
   }
 }

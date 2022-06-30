@@ -1,84 +1,75 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, FormArray, AbstractControl } from '@angular/forms';
-import { DatabaseService } from '../database.service';
-import { ValidationErrors } from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
 
-  reponseForm!:FormGroup;
+export class FormComponent {
 
-  name: string = "";
+  reponseForm!: FormGroup;
+  selectedCheckbox: string[] = [];
+  isSubmitted: boolean = false;
+  isValid: boolean = true;
 
-  email: string= "";
-
-  presences = [
-    {id: 0, name : 'Nous serons avec vous'},
-    {id: 1, name : 'Nous ne pourrons pas être là'}
-  ]
-
-  choices = [
-    {id: 0, name : 'La Mairie'},
-    {id: 1, name : 'Le Discours Biblique'},
-    {id: 2, name : 'Le Goûter'},
-    {id: 3, name : 'Le Repas dansant'}
-  ]
-
-
-  constructor (formBuilder:FormBuilder, private database: DatabaseService){} /* j'ai injecté mon service dans mon component */
-
-  ngOnInit(): void {
-    this.reponseForm = new FormGroup({
+  constructor(private formBuilder: FormBuilder) {
+    this.reponseForm = this.formBuilder.group({
       name: new FormControl("",
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(1),
-          Validators.maxLength(100)
-        ])),
+          Validators.required
+        ),
       email: new FormControl("",
         Validators.compose([
           Validators.required,
-          Validators.email,
-          Validators.minLength(1)
+          Validators.email
         ])),
-      presences: new FormControl(Validators.required),
-      choices: new FormArray([]),
-      nombreDePersonnes: new FormControl(""),
+      presence: this.formBuilder.group({
+        presenceMairie: new FormControl(false),
+        presenceDiscours: new FormControl(false),
+        presenceGouter: new FormControl(false),
+        presenceSoiree: new FormControl(false)
+      }),
+      nombreAdultes: new FormControl(0),
+      nombreEnfants: new FormControl(0),
       musique: new FormControl("")
     })
-  }
+   }
 
-/*
-  onCheckboxChange(event: any){
-    let selectedChoices = (this.reponseForm.controls['choices'] as FormArray);
-    let valueSelected = (event.target.checked)
-    let valueName = (event.target.value)
-    console.log(valueSelected);
+   controleOnChange(event: Event){
+    const inputHtml = (event.target as HTMLInputElement)
 
-    if (valueSelected){
-      selectedChoices.push(new FormControl(valueName));
+    if (inputHtml.checked) {
+      this.selectedCheckbox.push(inputHtml.value);
+      console.log(this.selectedCheckbox)
+
     } else {
-      let i: number = 0;
-      selectedChoices.controls.forEach((ctrl: AbstractControl) => {
-        if (ctrl.value == valueName) {
-          selectedChoices.removeAt(i)
-        }
-        i++
-      })
-      console.log(selectedChoices);
-
+      const index = this.selectedCheckbox.findIndex(choice => choice === inputHtml.value);
+      this.selectedCheckbox.splice(index, 1)
+      console.log(this.selectedCheckbox)
     }
-  }*/
+   }
 
-  onSubmitForm(): void {
-    console.log(this.reponseForm.value);
-    this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+
+  onSubmit(): void {
+    if (this.reponseForm.valid) {
+      console.log(this.reponseForm.value);
+      this.isSubmitted = true;
+    /* this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+    }
+
+    if (this.reponseForm.invalid) {
+      this.isValid = false;
+    }
   }
+
+  get name(){
+    return this.reponseForm.controls['name'];
+  }
+
+  get email(){
+    return this.reponseForm.controls['email'];
+  }
+
 
 }
-/* voir pour faire un this.Form.value pour récupérer toutes les valeurs du formulaire pour l'envoyer au back*/
