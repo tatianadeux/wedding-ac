@@ -10,8 +10,9 @@ exports.FormComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var FormComponent = /** @class */ (function () {
-    function FormComponent(formBuilder) {
+    function FormComponent(formBuilder, database) {
         this.formBuilder = formBuilder;
+        this.database = database;
         this.selectedCheckbox = [];
         this.isSubmitted = false;
         this.isValid = true;
@@ -32,6 +33,8 @@ var FormComponent = /** @class */ (function () {
             musique: new forms_1.FormControl("")
         });
     }
+    FormComponent.prototype.ngOnInit = function () {
+    };
     FormComponent.prototype.controleOnChange = function (event) {
         var inputHtml = event.target;
         if (inputHtml.checked) {
@@ -48,7 +51,7 @@ var FormComponent = /** @class */ (function () {
         if (this.reponseForm.valid) {
             console.log(this.reponseForm.value);
             this.isSubmitted = true;
-            /* this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+            this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
         }
         if (this.reponseForm.invalid) {
             this.isValid = false;

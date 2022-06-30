@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+/* COULEURS */
+/* POLICES */
+@font-face {
+  font-family: "Spring";
+  src: url("assets/fonts/Spring in May.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Regular";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
+}
+/* PARAMETRES GENERAUX */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #33271F;
+  scroll-behavior: smooth;
+  font-family: "Typewriter Regular";
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: "Spring";
+  font-size: 2.4em;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.w100 {
+  width: 100%;
+}
+
+body {
+  background-image: url("assets/img/mobile/fond30.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#section-footer {
+  background-color: #33271F;
+  padding: 26px;
+  text-align: center;
+  margin-top: 24%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#section-footer h3 {
+  font-family: "Spring";
+  color: #D7CFC3;
+  font-size: 1.8em;
+  margin: 12px 0;
+}
+
+.nom-footer {
+  font-family: "Spring";
+  color: #D7CFC3;
+  font-size: 1.5em;
+  margin: 8px 0;
+}
+
+#img-footer {
+  width: 42%;
+  margin: 0 auto;
+  display: block;
+}
+
+.infos-footer {
+  color: #D7CFC3;
+  margin-bottom: 8px;
+  font-size: 1em;
+}

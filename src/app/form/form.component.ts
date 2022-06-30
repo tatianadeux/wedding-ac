@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-form',
@@ -7,14 +8,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./form.component.scss']
 })
 
-export class FormComponent {
+export class FormComponent implements OnInit {
 
   reponseForm!: FormGroup;
   selectedCheckbox: string[] = [];
   isSubmitted: boolean = false;
   isValid: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private database: DatabaseService) {
     this.reponseForm = this.formBuilder.group({
       name: new FormControl("",
           Validators.required
@@ -36,6 +37,10 @@ export class FormComponent {
     })
    }
 
+   ngOnInit(): void {
+
+   }
+
    controleOnChange(event: Event){
     const inputHtml = (event.target as HTMLInputElement)
 
@@ -50,12 +55,11 @@ export class FormComponent {
     }
    }
 
-
   onSubmit(): void {
     if (this.reponseForm.valid) {
       console.log(this.reponseForm.value);
       this.isSubmitted = true;
-    /* this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
+      this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
     }
 
     if (this.reponseForm.invalid) {
@@ -70,6 +74,4 @@ export class FormComponent {
   get email(){
     return this.reponseForm.controls['email'];
   }
-
-
 }
