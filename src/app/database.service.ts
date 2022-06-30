@@ -10,7 +10,7 @@ export class DatabaseService {
 
   constructor(private http: HttpClient) {}
 
-  sendData(answers:string)   {
+  sendData(answers:FormGroup)   {
     const headers = new HttpHeaders().set('Content-Type','application/json');
 
     const answer = JSON.stringify(answers)

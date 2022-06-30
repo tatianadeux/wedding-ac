@@ -51,8 +51,7 @@ var FormComponent = /** @class */ (function () {
         if (this.reponseForm.valid) {
             console.log(this.reponseForm.value);
             this.isSubmitted = true;
-            var sentForm = JSON.stringify(this.reponseForm.value);
-            this.database.sendData(sentForm); /* envoi dans la bdd via le service */
+            this.database.sendData(this.reponseForm.value); /* envoi dans la bdd via le service */
         }
         if (this.reponseForm.invalid) {
             this.isValid = false;
