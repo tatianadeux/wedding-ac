@@ -14,7 +14,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #33271f;
+  color: #33271F;
   scroll-behavior: smooth;
   font-family: "Typewriter Regular";
 }
@@ -40,5 +40,5 @@ h3 {
 body {
   background-image: url("assets/img/mobile/fond30.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
