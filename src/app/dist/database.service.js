@@ -14,9 +14,12 @@ var DatabaseService = /** @class */ (function () {
         this.http = http;
     }
     DatabaseService.prototype.sendData = function (answers) {
+        var _this = this;
         var headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
         var answer = JSON.stringify(answers);
-        this.http.post('http://api.amandine-cedric.fr/presence', answer, { headers: headers }); /* URL / body / header */
+        this.http.post('http://api.amandine-cedric.fr/presence', answer, { headers: headers }).subscribe(function (data) {
+            _this.postId = data.id;
+        }); /* URL / body / header */
         console.log(answers);
     };
     DatabaseService = __decorate([

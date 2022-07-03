@@ -18,6 +18,7 @@ var accueil_component_1 = require("./accueil/accueil.component");
 var programme_component_1 = require("./programme/programme.component");
 var footer_component_1 = require("./footer/footer.component");
 var form_component_1 = require("./form/form.component");
+var database_service_1 = require("./database.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -36,9 +37,9 @@ var AppModule = /** @class */ (function () {
                 app_routing_module_1.AppRoutingModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
-                http_1.HttpClientModule
+                http_1.HttpClientModule,
             ],
-            providers: [],
+            providers: [database_service_1.DatabaseService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

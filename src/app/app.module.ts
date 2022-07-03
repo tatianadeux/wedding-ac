@@ -11,6 +11,7 @@ import { ProgrammeComponent } from './programme/programme.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 
+import { DatabaseService } from './database.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,9 @@ import { FormComponent } from './form/form.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,12 +10,14 @@ exports.FormComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var FormComponent = /** @class */ (function () {
-    function FormComponent(formBuilder, database) {
+    function FormComponent(formBuilder, database, http) {
         this.formBuilder = formBuilder;
         this.database = database;
+        this.http = http;
         this.selectedCheckbox = [];
         this.isSubmitted = false;
         this.isValid = true;
+        this.apiURL = "http://api.amandine-cedric.fr/presence";
         this.reponseForm = this.formBuilder.group({
             name: new forms_1.FormControl("", forms_1.Validators.required),
             email: new forms_1.FormControl("", forms_1.Validators.compose([
@@ -34,6 +36,8 @@ var FormComponent = /** @class */ (function () {
         });
     }
     FormComponent.prototype.ngOnInit = function () {
+        this.http.get(this.apiURL);
+        /*.subscribe(*/
     };
     FormComponent.prototype.controleOnChange = function (event) {
         var inputHtml = event.target;

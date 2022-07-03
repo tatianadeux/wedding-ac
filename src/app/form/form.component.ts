@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatabaseService } from '../database.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
@@ -10,12 +11,13 @@ import { DatabaseService } from '../database.service';
 
 export class FormComponent implements OnInit {
 
-  reponseForm!: FormGroup;
-  selectedCheckbox: string[] = [];
-  isSubmitted: boolean = false;
-  isValid: boolean = true;
+  public reponseForm!: FormGroup;
+  public selectedCheckbox: string[] = [];
+  public isSubmitted: boolean = false;
+  public isValid: boolean = true;
+  private apiURL: string ="http://api.amandine-cedric.fr/presence"
 
-  constructor(private formBuilder: FormBuilder, private database: DatabaseService) {
+  constructor(private formBuilder: FormBuilder, private database: DatabaseService, private http: HttpClient) {
     this.reponseForm = this.formBuilder.group({
       name: new FormControl("",
           Validators.required
@@ -38,7 +40,8 @@ export class FormComponent implements OnInit {
    }
 
    ngOnInit(): void {
-
+    this.http.get(this.apiURL)
+      /*.subscribe(*/
    }
 
    controleOnChange(event: Event){
@@ -76,3 +79,4 @@ export class FormComponent implements OnInit {
     return this.reponseForm.controls['email'];
   }
 }
+
