@@ -42,6 +42,7 @@ export class FormComponent implements OnInit {
    ngOnInit(): void {
     this.http.get(this.apiURL)
       /*.subscribe(*/
+      /* virer les références à http dans le component et tout mettre dans le service */
    }
 
    controleOnChange(event: Event){

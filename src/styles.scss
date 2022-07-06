@@ -18,7 +18,13 @@ $moutarde : #ddae2c;
   src: url("assets/fonts/ELEGANT\ TYPEWRITER\ Regular.ttf") format("woff2");
 }
 
+@font-face {
+  font-family: "Typewriter Bold";
+  src: url("assets/fonts/ELEGANT\ TYPEWRITER\ Bold.ttf") format("woff3");
+}
+
 $Typewriter : 'Typewriter Regular';
+$TypewriterBold : 'Typewriter Bold';
 $Spring : 'Spring';
 
 /* PARAMETRES GENERAUX */
@@ -56,5 +62,9 @@ body {
   background-image: url('assets/img/mobile/fond30.png');
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.bold {
+  font-family: $TypewriterBold;
 }
 

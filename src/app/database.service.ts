@@ -18,7 +18,7 @@ export class DatabaseService {
     const answer = JSON.stringify(answers)
     this.http.post<any>('http://api.amandine-cedric.fr/presence', answer, {headers:headers}).subscribe(data => {
       this.postId = data.id
-    }
+    } /* gérer dans le cas où il y a une erreur */
     );  /* URL / body / header */
     console.log(answers);
   }

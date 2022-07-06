@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+/* COULEURS */
+/* POLICES */
+@font-face {
+  font-family: "Spring";
+  src: url("assets/fonts/Spring in May.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Regular";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Bold";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
+}
+/* PARAMETRES GENERAUX */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #33271F;
+  scroll-behavior: smooth;
+  font-family: "Typewriter Regular";
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: "Spring";
+  font-size: 2.4em;
+  text-align: center;
+  line-height: 1.4em;
+}
+
+.w100 {
+  width: 100%;
+}
+
+body {
+  background-image: url("assets/img/mobile/fond30.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.bold {
+  font-family: "Typewriter Bold";
+}
+
+#titre-accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 98vh;
+  width: 95%;
+  margin: 0 auto 17% auto;
+}
+
+#titre-accueil > h1 {
+  font-family: "Spring";
+  font-size: 52px;
+  margin: 8px 0;
+}
+
+#titre-accueil h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+#div-infos {
+  margin-top: 10%;
+}
+
+#plus-accueil {
+  text-decoration: none;
+  width: 11%;
+  margin: 0 auto;
+  display: block;
+  animation: scale 3s infinite;
+}
+
+#texte-infos {
+  text-align: center;
+}
+
+#texte-accueil {
+  width: 80%;
+  margin: 90px auto 0 auto;
+  padding-top: 7px;
+}
+
+#texte-accueil p {
+  font-size: 1.1em;
+  margin-top: 12px;
+  line-height: 33px;
+  text-align: center;
+}
+
+#texte-date {
+  font-size: 1.2em;
+  margin-top: 12px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.img-accueil {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 360px) {
+  #titre-accueil {
+    margin: 0 auto 44% auto;
+  }
+
+  #titre-accueil > h1 {
+    font-size: 46px;
+  }
+
+  #titre-accueil > h2 {
+    font-size: 22px;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: translateY(-10%) scale(1);
+  }
+  50% {
+    transform: translateY(10%) scale(1.1);
+  }
+  100% {
+    transform: translateY(-10%) scale(1);
+  }
+}

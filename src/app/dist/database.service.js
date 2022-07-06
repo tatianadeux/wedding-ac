@@ -19,7 +19,7 @@ var DatabaseService = /** @class */ (function () {
         var answer = JSON.stringify(answers);
         this.http.post('http://api.amandine-cedric.fr/presence', answer, { headers: headers }).subscribe(function (data) {
             _this.postId = data.id;
-        }); /* URL / body / header */
+        } /* gérer dans le cas où il y a une erreur */); /* URL / body / header */
         console.log(answers);
     };
     DatabaseService = __decorate([

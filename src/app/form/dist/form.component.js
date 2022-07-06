@@ -38,6 +38,7 @@ var FormComponent = /** @class */ (function () {
     FormComponent.prototype.ngOnInit = function () {
         this.http.get(this.apiURL);
         /*.subscribe(*/
+        /* virer les références à http dans le component et tout mettre dans le service */
     };
     FormComponent.prototype.controleOnChange = function (event) {
         var inputHtml = event.target;
