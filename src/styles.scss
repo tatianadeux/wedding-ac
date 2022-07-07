@@ -59,12 +59,14 @@ h3 {
 
 
 body {
-  background-image: url('assets/img/mobile/fond30.png');
+  background-image: url('assets/img/mobile/fond30-min.png');
   background-repeat: no-repeat;
   background-size: auto;
 }
 
-.bold {
-  font-family: $TypewriterBold;
+@media screen and (min-height: 780px) {
+  h3 {
+    font-size: 2.8em;
+  }
 }
 

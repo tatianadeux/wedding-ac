@@ -9,6 +9,10 @@
   font-family: "Typewriter Regular";
   src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
 }
+@font-face {
+  font-family: "Typewriter Bold";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
+}
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
@@ -38,11 +42,16 @@ h3 {
 }
 
 body {
-  background-image: url("assets/img/mobile/fond30.png");
+  background-image: url("assets/img/mobile/fond30-min.png");
   background-repeat: no-repeat;
   background-size: auto;
 }
 
+@media screen and (min-height: 780px) {
+  h3 {
+    font-size: 2.8em;
+  }
+}
 #section-footer {
   background-color: #33271F;
   padding: 0 26px;
@@ -52,6 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  position: absolute;
 }
 
 #section-footer h3 {
@@ -78,4 +88,27 @@ body {
   color: #D7CFC3;
   margin-bottom: 8px;
   font-size: 1em;
+}
+
+.texte-footer {
+  color: #D7CFC3;
+  margin: 8px 0;
+}
+
+@media screen and (min-height: 780px) {
+  #section-footer h3 {
+    font-size: 2em;
+  }
+
+  .nom-footer {
+    font-size: 1.7em;
+  }
+
+  .infos-footer {
+    font-size: 1.3em;
+  }
+
+  .texte-footer {
+    font-size: 18px;
+  }
 }

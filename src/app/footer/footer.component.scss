@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  position: absolute;
 }
 
 #section-footer h3 {
@@ -36,3 +37,24 @@
   margin-bottom: 8px;
   font-size: 1em;
 }
+
+.texte-footer {
+  color: $beige;
+  margin: 8px 0;
+}
+
+@media screen and (min-height: 780px) {
+  #section-footer h3 {
+    font-size: 2em;
+  }
+  .nom-footer {
+    font-size: 1.7em;
+  }
+  .infos-footer {
+    font-size: 1.3em;
+  }
+  .texte-footer {
+    font-size: 18px;
+  }
+}
+

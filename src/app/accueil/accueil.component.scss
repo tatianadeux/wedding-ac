@@ -90,3 +90,35 @@
       transform: translateY(-10%) scale(1);
   }
 }
+
+@media screen and (min-height: 780px) {
+  #titre-accueil {
+    height: 94vh;
+  }
+  #titre-accueil h1 {
+    font-size: 62px;
+  }
+  #titre-accueil {
+    font-size: 28px
+  }
+  #div-infos {
+    margin-top: 8%;
+  }
+  #texte-infos {
+    font-size: 20px;
+  }
+  #texte-accueil {
+    width: 86%;
+  }
+  #texte-accueil p, #texte-date {
+    font-size: 1.6em;
+    margin-top: 20px;
+    line-height: 39px;
+  }
+  #texte-date {
+    font-size: 1.8em;
+  }
+  .img-accueil {
+    margin: 30px auto;
+  }
+}

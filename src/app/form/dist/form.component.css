@@ -9,6 +9,10 @@
   font-family: "Typewriter Regular";
   src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
 }
+@font-face {
+  font-family: "Typewriter Bold";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
+}
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
@@ -38,13 +42,19 @@ h3 {
 }
 
 body {
-  background-image: url("assets/img/mobile/fond30.png");
+  background-image: url("assets/img/mobile/fond30-min.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
 
+@media screen and (min-height: 780px) {
+  h3 {
+    font-size: 2.8em;
+  }
+}
 #form-section {
   height: 85vh;
+  position: relative;
 }
 
 #formulaire {
@@ -140,4 +150,43 @@ body {
 
 .form-group {
   margin: 6px 0;
+}
+
+@media screen and (min-height: 780px) {
+  .form-input::placeholder, .form-label {
+    font-size: 17px;
+    margin-left: 12px;
+  }
+
+  .form-input {
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .form-div {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .form-center label {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+
+  .form-number {
+    font-size: 20px;
+  }
+
+  #form-button {
+    font-size: 20px;
+    border-radius: 25px;
+    width: 70%;
+    padding: 16px;
+  }
+
+  #form-confirm {
+    font-size: 16px;
+  }
 }

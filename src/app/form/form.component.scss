@@ -2,6 +2,7 @@
 
 #form-section {
   height: 85vh;
+  position: relative;
 }
 
 #formulaire {
@@ -97,4 +98,37 @@
 
 .form-group {
   margin: 6px 0 ;
+}
+
+@media screen and (min-height: 780px) {
+  .form-input::placeholder, .form-label {
+    font-size: 17px;
+    margin-left: 12px;
+  }
+  .form-input {
+    height: 50px;
+    border-radius: 25px;
+  }
+  .form-div {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .form-center label {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .form-number {
+    font-size: 20px;
+  }
+  #form-button {
+    font-size: 20px;
+    border-radius: 25px;
+    width: 70%;
+    padding: 16px;
+  }
+  #form-confirm {
+    font-size: 16px;
+  }
 }
