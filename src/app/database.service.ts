@@ -22,6 +22,4 @@ export class DatabaseService {
     );  /* URL / body / header */
     console.log(answers);
   }
-
-
 }
