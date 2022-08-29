@@ -33,21 +33,7 @@ $large-phone: "(min-width: 400px) and (orientation:portrait)";
 $tablet-portrait: "(min-width: 426px) and (max-width: 768px) and (orientation:portrait)";
 $tablet-landscape: "(min-width: 769px) and (max-width: 1024px)";
 
-/* TRANSFORM */
-@mixin scale-up {
-  @keyframes scale {
-    0% {
 
-        transform: translateY(-10%) scale(1);
-    }
-    50% {
-        transform: translateY(10%) scale(1.1);
-    }
-    100% {
-        transform: translateY(-10%) scale(1);
-    }
-  }
-}
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
