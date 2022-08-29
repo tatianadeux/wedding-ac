@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* COULEURS */
-/* POLICES */
+/***** IMPORTS *****/
 @font-face {
   font-family: "Spring";
   src: url("assets/fonts/Spring in May.ttf") format("woff2");
@@ -13,6 +12,10 @@
   font-family: "Typewriter Bold";
   src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
 }
+/* COULEURS */
+/* POLICES */
+/*  BREAKPOINTS */
+/* TRANSFORM */
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
@@ -23,22 +26,12 @@
   font-family: "Typewriter Regular";
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h3 {
-  font-family: "Spring";
-  font-size: 2.4em;
-  text-align: center;
-  line-height: 1.4em;
-}
-
 .w100 {
   width: 100%;
+}
+
+.full-height {
+  height: 98vh;
 }
 
 body {
@@ -47,48 +40,46 @@ body {
   background-size: auto;
 }
 
-@media screen and (min-height: 780px) {
-  h3 {
-    font-size: 2.8em;
-  }
+h3 {
+  font-family: "Spring";
+  font-size: 36px;
+  text-align: center;
 }
+
 #programme {
   text-align: center;
   margin: 28px 0;
 }
-
-.titre-prg {
+@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
+  #programme {
+    margin: 14% 0;
+  }
+}
+#programme .lieu-prg {
+  margin: 10px 0;
+}
+#programme .lieu-prg .titre-prg {
   font-family: "Spring";
   font-size: 1.6em;
 }
-
-.texte-prg {
+@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
+  #programme .lieu-prg .titre-prg {
+    font-size: 2.2em;
+  }
+}
+#programme .lieu-prg .texte-prg {
   font-size: 1.1em;
 }
-
-.lieu-prg {
-  margin: 10px 0;
+@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
+  #programme .lieu-prg .texte-prg {
+    font-size: 24px;
+  }
 }
 
 #carte-prg {
   width: 66%;
   margin: 20px auto;
 }
-
-#carte-prg > a > img {
+#carte-prg a img {
   border-radius: 10%;
-}
-
-@media screen and (min-height: 780px) {
-  #programme {
-    margin: 14% 0;
-  }
-
-  .titre-prg {
-    font-size: 2.2em;
-  }
-
-  .texte-prg {
-    font-size: 24px;
-  }
 }

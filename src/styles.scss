@@ -28,7 +28,8 @@ $TypewriterBold : 'Typewriter Bold';
 $Spring : 'Spring';
 
 /*  BREAKPOINTS */
-$large-phone: "(min-width: 375px) and (orientation:portrait)";
+$small-phone :"(max-wdith:399px) and (orientation:portrait)";
+$large-phone: "(min-width: 400px) and (orientation:portrait)";
 $tablet-portrait: "(min-width: 426px) and (max-width: 768px) and (orientation:portrait)";
 $tablet-landscape: "(min-width: 769px) and (max-width: 1024px)";
 
@@ -69,6 +70,12 @@ body {
   background-image: url('assets/img/mobile/fond30-min.png');
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+h3 {
+  font-family: $Spring;
+  font-size: 36px;
+  text-align: center;
 }
 
 

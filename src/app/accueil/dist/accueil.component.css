@@ -14,18 +14,36 @@
 }
 /* COULEURS */
 /* POLICES */
-/* TAILLES */
+/*  BREAKPOINTS */
+/* TRANSFORM */
+/* PARAMETRES GENERAUX */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #33271F;
+  scroll-behavior: smooth;
+  font-family: "Typewriter Regular";
+}
+
+.w100 {
+  width: 100%;
+}
+
 .full-height {
   height: 98vh;
 }
 
-/*  BREAKPOINTS */
-/* TRANSFORM */
-/* PARAMETRES GENERAUX */
 body {
   background-image: url("assets/img/mobile/fond30-min.png");
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+h3 {
+  font-family: "Spring";
+  font-size: 36px;
+  text-align: center;
 }
 
 #titre-accueil {
@@ -37,9 +55,9 @@ body {
   font-family: "Spring";
   font-size: 46px;
   text-align: center;
-  margin: 16px 4px;
+  margin: 16px 4px 0;
 }
-@media (min-width: 375px) and (orientation:portrait) {
+@media (min-width: 400px) and (orientation:portrait) {
   #titre-accueil h1 {
     font-size: 52px;
   }
@@ -49,7 +67,7 @@ body {
   text-align: center;
   margin: 12px 4px;
 }
-@media (min-width: 375px) and (orientation:portrait) {
+@media (min-width: 400px) and (orientation:portrait) {
   #titre-accueil h2 {
     font-size: 26px;
   }
@@ -71,27 +89,27 @@ body {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 #texte-accueil p {
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 28px;
   margin: 6px 0;
   text-align: center;
 }
-@media (min-width: 375px) and (orientation:portrait) {
+@media (min-width: 400px) and (orientation:portrait) {
   #texte-accueil p {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 #texte-accueil #date {
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
   margin: 10px 0;
 }
-@media (min-width: 375px) and (orientation:portrait) {
+@media (min-width: 400px) and (orientation:portrait) {
   #texte-accueil #date {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 #texte-accueil .img-accueil img {
@@ -99,7 +117,7 @@ body {
   margin: 0 auto;
   display: block;
 }
-@media (min-width: 375px) and (orientation:portrait) {
+@media (min-width: 400px) and (orientation:portrait) {
   #texte-accueil .img-accueil img {
     width: 80%;
   }

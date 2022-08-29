@@ -9,7 +9,7 @@
         font-family: $Spring;
         font-size: 46px;
         text-align: center;
-        margin: 16px 4px;
+        margin: 16px 4px 0;
 
         @media #{$large-phone} {
           font-size: 52px;
@@ -49,26 +49,28 @@
       padding: 8px;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: center;
 
       p {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 18px;
+        line-height: 28px;
         margin: 6px 0;
         text-align: center;
 
+
+
         @media #{$large-phone} {
-          font-size: 22px;
+          font-size: 20px;
         }
       }
 
       #date {
-        font-size: 22px;
+        font-size: 20px;
         text-align: center;
         margin: 10px 0;
 
         @media #{$large-phone} {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
 

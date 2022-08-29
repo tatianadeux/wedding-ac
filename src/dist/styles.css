@@ -39,3 +39,9 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
 }
+
+h3 {
+  font-family: "Spring";
+  font-size: 36px;
+  text-align: center;
+}
