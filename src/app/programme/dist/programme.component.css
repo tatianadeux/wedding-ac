@@ -48,32 +48,17 @@ h3 {
 
 #programme {
   text-align: center;
-  margin: 28px 0;
-}
-@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
-  #programme {
-    margin: 14% 0;
-  }
+  margin: 46px 0;
 }
 #programme .lieu-prg {
   margin: 10px 0;
 }
 #programme .lieu-prg .titre-prg {
   font-family: "Spring";
-  font-size: 1.6em;
-}
-@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
-  #programme .lieu-prg .titre-prg {
-    font-size: 2.2em;
-  }
+  font-size: 30px;
 }
 #programme .lieu-prg .texte-prg {
   font-size: 1.1em;
-}
-@media (min-width: 376px) and (min-height:700px) and (orientation:portrait) {
-  #programme .lieu-prg .texte-prg {
-    font-size: 24px;
-  }
 }
 
 #carte-prg {

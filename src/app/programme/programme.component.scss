@@ -2,31 +2,17 @@
 
 #programme {
   text-align: center;
-  margin: 28px 0;
-
-  @media #{$large-phone} {
-    margin: 14% 0;
-  }
+  margin: 46px 0;
 
   .lieu-prg {
     margin: 10px 0;
 
     .titre-prg {
       font-family: $Spring;
-      font-size: 1.6em;
-
-      @media #{$large-phone} {
-        font-size: 2.2em;
-      }
-
+      font-size: 30px;
     }
     .texte-prg {
       font-size: 1.1em;
-
-      @media #{$large-phone} {
-        font-size: 24px;
-      }
-
     }
   }
 }
