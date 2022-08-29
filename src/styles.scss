@@ -1,13 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* COULEURS */
-$marron : #33271F;
-$beige : #D7CFC3;
-$beigeLight : #EDEBE5;
-$sauge : #b5c99a;
-$moutarde : #ddae2c;
-
-/* POLICES */
+/***** IMPORTS *****/
 @font-face {
   font-family: "Spring";
   src: url("assets/fonts/Spring\ in\ May.ttf") format("woff2");
@@ -23,10 +15,54 @@ $moutarde : #ddae2c;
   src: url("assets/fonts/ELEGANT\ TYPEWRITER\ Bold.ttf") format("woff3");
 }
 
+/* COULEURS */
+$marron : #33271F;
+$beige : #D7CFC3;
+$beigeLight : #EDEBE5;
+$sauge : #b5c99a;
+$moutarde : #ddae2c;
+
+/* POLICES */
 $Typewriter : 'Typewriter Regular';
 $TypewriterBold : 'Typewriter Bold';
 $Spring : 'Spring';
 
+/* TAILLES */
+.full-height {
+  height: 98vh;
+}
+$spacing-xxs: 4px;
+$spacing-xs : 6px;
+$spacing-s: 8px;
+$spacing-m: 12px;
+
+$size-xs: 16px;
+$size-s: 18px;
+$size-m: 20px;
+$size-l: 22px;
+$size-xl: 24px;
+$size-xxl: 26px;
+
+/*  BREAKPOINTS */
+$large-phone: "(min-width: 375px) and (orientation:portrait)";
+$tablet-portrait: "(min-width: 426px) and (max-width: 768px) and (orientation:portrait)";
+$tablet-landscape: "(min-width: 769px) and (max-width: 1024px)";
+
+/* TRANSFORM */
+@mixin scale-up {
+  @keyframes scale {
+    0% {
+
+        transform: translateY(-10%) scale(1);
+    }
+    50% {
+        transform: translateY(10%) scale(1.1);
+    }
+    100% {
+        transform: translateY(-10%) scale(1);
+    }
+  }
+}
 /* PARAMETRES GENERAUX */
 
 * {
@@ -38,25 +74,9 @@ $Spring : 'Spring';
   font-family: $Typewriter;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h3 {
-  font-family: 'Spring';
-  font-size: 2.4em;
-  text-align: center;
-  line-height: 1.4em;
-}
-
-
 .w100 {
   width: 100%;
 }
-
 
 body {
   background-image: url('assets/img/mobile/fond30-min.png');
@@ -64,9 +84,4 @@ body {
   background-size: auto;
 }
 
-@media screen and (min-height: 780px) {
-  h3 {
-    font-size: 2.8em;
-  }
-}
 
