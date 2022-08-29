@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* COULEURS */
-/* POLICES */
+/***** IMPORTS *****/
 @font-face {
   font-family: "Spring";
   src: url("assets/fonts/Spring in May.ttf") format("woff2");
@@ -13,6 +12,10 @@
   font-family: "Typewriter Bold";
   src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
 }
+/* COULEURS */
+/* POLICES */
+/*  BREAKPOINTS */
+/* TRANSFORM */
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
@@ -23,22 +26,12 @@
   font-family: "Typewriter Regular";
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h3 {
-  font-family: "Spring";
-  font-size: 2.4em;
-  text-align: center;
-  line-height: 1.4em;
-}
-
 .w100 {
   width: 100%;
+}
+
+.full-height {
+  height: 98vh;
 }
 
 body {
@@ -47,68 +40,49 @@ body {
   background-size: auto;
 }
 
-@media screen and (min-height: 780px) {
-  h3 {
-    font-size: 2.8em;
-  }
+h3 {
+  font-family: "Spring";
+  font-size: 36px;
+  text-align: center;
+  margin: 10px 0;
 }
+
 #section-footer {
   background-color: #33271F;
   padding: 0 26px;
   text-align: center;
-  margin-top: 24%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  position: absolute;
 }
-
 #section-footer h3 {
   font-family: "Spring";
   color: #D7CFC3;
   font-size: 1.8em;
   margin: 12px 0;
 }
-
-.nom-footer {
+#section-footer .nom-footer {
   font-family: "Spring";
   color: #D7CFC3;
   font-size: 1.5em;
   margin: 8px 0;
 }
-
-#img-footer {
+#section-footer #img-footer {
   width: 42%;
   margin: 0 auto;
   display: block;
 }
-
-.infos-footer {
+#section-footer .infos-footer {
   color: #D7CFC3;
   margin-bottom: 8px;
   font-size: 1em;
 }
-
-.texte-footer {
+#section-footer #white-line {
+  display: block;
+  border: 1px #D7CFC3 solid;
+}
+#section-footer .texte-footer {
   color: #D7CFC3;
   margin: 8px 0;
-}
-
-@media screen and (min-height: 780px) {
-  #section-footer h3 {
-    font-size: 2em;
-  }
-
-  .nom-footer {
-    font-size: 1.7em;
-  }
-
-  .infos-footer {
-    font-size: 1.3em;
-  }
-
-  .texte-footer {
-    font-size: 18px;
-  }
 }
