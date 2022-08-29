@@ -27,22 +27,6 @@ $Typewriter : 'Typewriter Regular';
 $TypewriterBold : 'Typewriter Bold';
 $Spring : 'Spring';
 
-/* TAILLES */
-.full-height {
-  height: 98vh;
-}
-$spacing-xxs: 4px;
-$spacing-xs : 6px;
-$spacing-s: 8px;
-$spacing-m: 12px;
-
-$size-xs: 16px;
-$size-s: 18px;
-$size-m: 20px;
-$size-l: 22px;
-$size-xl: 24px;
-$size-xxl: 26px;
-
 /*  BREAKPOINTS */
 $large-phone: "(min-width: 375px) and (orientation:portrait)";
 $tablet-portrait: "(min-width: 426px) and (max-width: 768px) and (orientation:portrait)";
@@ -64,6 +48,23 @@ $tablet-landscape: "(min-width: 769px) and (max-width: 1024px)";
   }
 }
 /* PARAMETRES GENERAUX */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $marron;
+  scroll-behavior: smooth;
+  font-family: $Typewriter;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.full-height {
+  height: 98vh;
+}
+
 body {
   background-image: url('assets/img/mobile/fond30-min.png');
   background-repeat: no-repeat;

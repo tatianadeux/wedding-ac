@@ -28,50 +28,6 @@ body {
   background-size: auto;
 }
 
-/* You can add global styles to this file, and also import other style files */
-/***** IMPORTS *****/
-@font-face {
-  font-family: "Spring";
-  src: url("assets/fonts/Spring in May.ttf") format("woff2");
-}
-@font-face {
-  font-family: "Typewriter Regular";
-  src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
-}
-@font-face {
-  font-family: "Typewriter Bold";
-  src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
-}
-/* COULEURS */
-/* POLICES */
-/* TAILLES */
-.full-height {
-  height: 98vh;
-}
-
-/*  BREAKPOINTS */
-/* TRANSFORM */
-/* PARAMETRES GENERAUX */
-body {
-  background-image: url("assets/img/mobile/fond30-min.png");
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
-/* PARAMETRES GENERAUX */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  color: #33271F;
-  scroll-behavior: smooth;
-  font-family: "Typewriter Regular";
-}
-
-.w100 {
-  width: 100%;
-}
-
 #titre-accueil {
   display: flex;
   flex-direction: column;

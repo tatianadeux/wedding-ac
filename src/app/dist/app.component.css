@@ -14,21 +14,11 @@
 }
 /* COULEURS */
 /* POLICES */
-/* TAILLES */
-.full-height {
-  height: 98vh;
-}
-
 /*  BREAKPOINTS */
 /* TRANSFORM */
-body {
-  background-image: url("../assets/img/mobile/fond30-min.png");
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
 /* PARAMETRES GENERAUX */
 * {
+  border: 1px red solid;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,4 +29,14 @@ body {
 
 .w100 {
   width: 100%;
+}
+
+.full-height {
+  height: 98vh;
+}
+
+body {
+  background-image: url("assets/img/mobile/fond30-min.png");
+  background-repeat: no-repeat;
+  background-size: auto;
 }
