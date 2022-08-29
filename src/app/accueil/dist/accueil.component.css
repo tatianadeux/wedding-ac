@@ -22,6 +22,43 @@
 /*  BREAKPOINTS */
 /* TRANSFORM */
 /* PARAMETRES GENERAUX */
+body {
+  background-image: url("assets/img/mobile/fond30-min.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* You can add global styles to this file, and also import other style files */
+/***** IMPORTS *****/
+@font-face {
+  font-family: "Spring";
+  src: url("assets/fonts/Spring in May.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Regular";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Regular.ttf") format("woff2");
+}
+@font-face {
+  font-family: "Typewriter Bold";
+  src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
+}
+/* COULEURS */
+/* POLICES */
+/* TAILLES */
+.full-height {
+  height: 98vh;
+}
+
+/*  BREAKPOINTS */
+/* TRANSFORM */
+/* PARAMETRES GENERAUX */
+body {
+  background-image: url("assets/img/mobile/fond30-min.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,12 +70,6 @@
 
 .w100 {
   width: 100%;
-}
-
-body {
-  background-image: url("assets/img/mobile/fond30-min.png");
-  background-repeat: no-repeat;
-  background-size: auto;
 }
 
 #titre-accueil {
@@ -92,10 +123,20 @@ body {
   margin: 6px 0;
   text-align: center;
 }
+@media (min-width: 375px) and (orientation:portrait) {
+  #texte-accueil p {
+    font-size: 22px;
+  }
+}
 #texte-accueil #date {
   font-size: 22px;
   text-align: center;
   margin: 10px 0;
+}
+@media (min-width: 375px) and (orientation:portrait) {
+  #texte-accueil #date {
+    font-size: 24px;
+  }
 }
 #texte-accueil .img-accueil img {
   width: 90%;
