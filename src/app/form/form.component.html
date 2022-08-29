@@ -1,62 +1,127 @@
-<section id="form-section">
+<section id="form-section" class="full-height">
   <h3>Notre Réponse</h3>
-  <form [formGroup]="reponseForm" (ngSubmit)="onSubmit()" novalidate id="formulaire">
+  <form
+    [formGroup]="reponseForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    id="formulaire"
+  >
     <div *ngIf="name.errors && !isValid">
-      <span *ngIf="name.errors['required']" class="error-text">Le nom manque</span>
+      <span *ngIf="name.errors['required']" class="error-text"
+        >Le nom manque</span
+      >
     </div>
-    <input type="text" class="form-input" formControlName="name" placeholder="Nom & Prénom">
-
+    <input
+      type="text"
+      class="form-input"
+      formControlName="name"
+      placeholder="Nom & Prénom"
+    />
 
     <div *ngIf="email.errors && !isValid">
-      <span *ngIf="email.errors['required']" class="error-text">L'email est manquant</span>
-      <span *ngIf="email.errors['email']" class="error-text">L'email n'est pas conforme</span>
+      <span *ngIf="email.errors['required']" class="error-text"
+        >L'email est manquant</span
+      >
+      <span *ngIf="email.errors['email']" class="error-text"
+        >L'email n'est pas conforme</span
+      >
     </div>
-    <input type="text" class="form-input" formControlName="email" placeholder="Email">
+    <input
+      type="text"
+      class="form-input"
+      formControlName="email"
+      placeholder="Email"
+    />
 
     <div formGroupName="presence" class="form-div">
-
       <div class="form-group">
-        <input value="presenceMairie" type="checkbox" id="presenceMairie" (change)="controleOnChange($event)" formControlName="presenceMairie">
+        <input
+          value="presenceMairie"
+          type="checkbox"
+          id="presenceMairie"
+          (change)="controleOnChange($event)"
+          formControlName="presenceMairie"
+        />
         <label for="presenceMairie" class="form-label">Mairie</label>
       </div>
 
       <div class="form-group">
-        <input value="presenceDiscours" type="checkbox" id="presenceDiscours" (change)="controleOnChange($event)" formControlName="presenceDiscours">
-        <label for="presenceDiscours" class="form-label">Discours Biblique</label>
+        <input
+          value="presenceDiscours"
+          type="checkbox"
+          id="presenceDiscours"
+          (change)="controleOnChange($event)"
+          formControlName="presenceDiscours"
+        />
+        <label for="presenceDiscours" class="form-label"
+          >Discours Biblique</label
+        >
       </div>
 
       <div class="form-group">
-        <input value="presenceGouter" type="checkbox" id="presenceGouter" (change)="controleOnChange($event)" formControlName="presenceGouter">
+        <input
+          value="presenceGouter"
+          type="checkbox"
+          id="presenceGouter"
+          (change)="controleOnChange($event)"
+          formControlName="presenceGouter"
+        />
         <label for="presenceGouter" class="form-label">Goûter</label>
       </div>
 
       <div class="form-group">
-        <input value="presenceSoiree" type="checkbox" id="presenceSoiree" (change)="controleOnChange($event)" formControlName="presenceSoiree">
+        <input
+          value="presenceSoiree"
+          type="checkbox"
+          id="presenceSoiree"
+          (change)="controleOnChange($event)"
+          formControlName="presenceSoiree"
+        />
         <label for="presenceSoiree" class="form-label">Repas & Soirée</label>
       </div>
     </div>
 
     <div class="form-center">
       <label for="nombreAdultes">Nombre d'Adultes</label>
-      <input type="number" class="form-number" id="nombreAdultes" min="0" max="10" formControlName="nombreAdultes">
+      <input
+        type="number"
+        class="form-number"
+        id="nombreAdultes"
+        min="0"
+        max="10"
+        formControlName="nombreAdultes"
+      />
     </div>
 
     <div class="form-center">
       <label for="nombreEnfants">Nombre d'Enfants</label>
-      <input type="number" class="form-number" id="nombreEnfants" min="0" max="10" formControlName="nombreEnfants">
+      <input
+        type="number"
+        class="form-number"
+        id="nombreEnfants"
+        min="0"
+        max="10"
+        formControlName="nombreEnfants"
+      />
     </div>
 
-    <input type="text" class="form-input" formControlName="musique" placeholder="Musique qu'on aimerait entendre">
+    <input
+      type="text"
+      class="form-input"
+      formControlName="musique"
+      placeholder="Musique qu'on aimerait entendre"
+    />
 
-
-
-    <input type="submit" value="Nous confirmons" id="form-button">
+    <input type="submit" value="Nous confirmons" id="form-button" />
     <!-- Récupérer les données, instancier un nouvel objet / quand j'envoie avec le client http, utiliser la methode tojson pour qu'il le reçoive comme il veut-->
   </form>
 
-  <div *ngIf="reponseForm.valid && isSubmitted" id="form-confirm" class="form-center">
-    <img src="assets/img/icons/okBrown.png" alt="">
-    <p>Votre réponse a bien été envoyée </p>
+  <div
+    *ngIf="reponseForm.valid && isSubmitted"
+    id="form-confirm"
+    class="form-center"
+  >
+    <img src="assets/img/icons/okBrown.png" alt="" />
+    <p>Votre réponse a bien été envoyée</p>
   </div>
-
 </section>

@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* COULEURS */
-/* POLICES */
+/***** IMPORTS *****/
 @font-face {
   font-family: "Spring";
   src: url("assets/fonts/Spring in May.ttf") format("woff2");
@@ -13,6 +12,10 @@
   font-family: "Typewriter Bold";
   src: url("assets/fonts/ELEGANT TYPEWRITER Bold.ttf") format("woff3");
 }
+/* COULEURS */
+/* POLICES */
+/*  BREAKPOINTS */
+/* TRANSFORM */
 /* PARAMETRES GENERAUX */
 * {
   box-sizing: border-box;
@@ -23,22 +26,12 @@
   font-family: "Typewriter Regular";
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h3 {
-  font-family: "Spring";
-  font-size: 2.4em;
-  text-align: center;
-  line-height: 1.4em;
-}
-
 .w100 {
   width: 100%;
+}
+
+.full-height {
+  height: 98vh;
 }
 
 body {
@@ -47,23 +40,31 @@ body {
   background-size: auto;
 }
 
-@media screen and (min-height: 780px) {
-  h3 {
-    font-size: 2.8em;
-  }
+h3 {
+  font-family: "Spring";
+  font-size: 36px;
+  text-align: center;
+  margin: 10px 0;
 }
+
 #form-section {
-  height: 85vh;
   position: relative;
 }
-
-#formulaire {
-  width: 80%;
+#form-section #formulaire {
+  width: 90%;
   margin: 0 auto;
-  height: 60vh;
 }
-
-.form-input {
+#form-section #formulaire > span {
+  display: block;
+  font-size: 16px;
+  margin: 4px 0;
+}
+#form-section #formulaire .error-text {
+  font-size: 16px;
+  color: #d72424;
+  padding-left: 11px;
+}
+#form-section #formulaire .form-input {
   width: 100%;
   height: 40px;
   border: 1px #33271F solid;
@@ -72,61 +73,53 @@ body {
   padding-left: 14px;
   margin: 10px 0;
 }
-
-.form-input::placeholder {
+#form-section #formulaire .form-input::placeholder {
   color: #33271F;
-  font-size: 14px;
+  font-size: 16px;
 }
-
-.form-div, #form-button {
+#form-section #formulaire .form-div {
   width: 100%;
   border: 1px #33271F solid;
   border-radius: 20px;
   background-color: #EDEBE5;
-  padding: 9px 14px;
+  padding: 12px 14px;
   margin: 10px 0;
 }
-
-.form-div > span, #form-button {
-  display: block;
-  color: #33271F;
-  font-size: 14px;
-  margin: 4px 0;
+#form-section #formulaire .form-div .form-group {
+  margin: 6px 0;
 }
-
-.form-center {
+#form-section #formulaire .form-div .form-label {
+  margin: 3px;
+  color: #33271F;
+  font-size: 16px;
+}
+#form-section #formulaire .form-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.form-label {
-  margin: 3px;
-  color: #33271F;
-  font-size: 14px;
-}
-
-#form-button {
-  width: 60%;
-  margin: 10% auto;
-  background-color: #33271F;
-  color: #ddae2c;
-  padding: 10px;
-}
-
-.error-text {
-  font-size: 14px;
-  color: #d72424;
-  padding-left: 11px;
-}
-
-.form-number {
+#form-section #formulaire .form-center .form-number {
   height: 30px;
   border: #33271F;
   background-color: #EDEBE5;
   margin: 10px;
   padding: 4px;
   text-align: center;
+}
+
+#form-button {
+  border: 1px #33271F solid;
+  border-radius: 20px;
+  padding: 9px 14px;
+  margin: 10px 0;
+  display: block;
+  font-size: 14px;
+  margin: 4px 0;
+  width: 60%;
+  margin: 10% auto;
+  background-color: #33271F;
+  color: #ddae2c;
+  padding: 10px;
 }
 
 #form-confirm {
@@ -137,19 +130,19 @@ body {
   background-color: #ddae2c;
   padding: 4px;
   border-radius: 20px;
+  margin: 6px 0;
 }
-
 #form-confirm img {
   width: 11%;
   margin: 4px;
 }
-
 #form-confirm p {
   font-size: 16px;
 }
-
-.form-group {
-  margin: 6px 0;
+#form-confirm .form-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-height: 780px) {
